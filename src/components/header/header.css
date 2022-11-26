@@ -14,6 +14,13 @@ nav section ul{
 nav section ul li{
     margin-left:2vw;
 }
+nav section ul li a{
+    text-decoration: none;
+    color:#330f7c;
+}
+nav section ul li a:hover{
+    color:#ffde59;
+}
 .logo{
     width:10vw;
 }
