@@ -1,12 +1,14 @@
 /*lista de secciones del navegador*/
 
+import { Link } from "react-router-dom"
+
 export const List = () => {
     return (
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#general">General</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#pyr">P&R</a></li>
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/general">General</Link></li>
+            <li><Link to="/catalogue/todos">Productos</Link></li>
+            <li><Link to="pyr">P&R</Link></li>
         </ul>
     )
 }

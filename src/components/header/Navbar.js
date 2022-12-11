@@ -7,7 +7,7 @@ export const Navbar = () => {
     return (
         <nav>
         <section>
-        <img src="https://i.ibb.co/hFs6zkF/logo.png" className="logo"></img>
+        <img alt="logo" src="https://i.ibb.co/hFs6zkF/logo.png" className="logo"></img>
         <List />
         </section>
         <CartWidget />

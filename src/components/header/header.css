@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+body{
+    font-family:'Noto Sans', sans-serif;
+}
 nav{
     display:flex;
     justify-content:space-between;
-    background-color:rgb(179, 179, 179);
+    background-color:rgb(143, 240, 151);
 }
 nav section{
     display:flex;
@@ -28,4 +33,7 @@ nav section ul li a:hover{
     width:20px;
     margin-top:9vh;
     margin-right:2vw;
+}
+.cart:hover{
+    color:#ffde59;
 }
