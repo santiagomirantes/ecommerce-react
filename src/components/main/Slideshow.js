@@ -13,7 +13,7 @@ export const Slideshow = function () {
     return (
             <section id="slideshow">
                 <img id="titleBackground" onClick={callChangeLink} alt="Imágen de perro" src={actualLink}></img>
-                <h1>Pet´s Kingdom</h1>
+                <h1 className="openTitle">Pet´s Kingdom</h1>
                 <h2 className="centered">Toca para cambiar</h2>
             </section>
     )

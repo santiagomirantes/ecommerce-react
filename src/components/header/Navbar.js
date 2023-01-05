@@ -2,12 +2,15 @@
 
 import {List} from "./List.js"
 import {CartWidget} from "./CartWidget.js"
+import { Link } from "react-router-dom"
 
 export const Navbar = () => {
     return (
         <nav>
         <section>
-        <img alt="logo" src="https://i.ibb.co/hFs6zkF/logo.png" className="logo"></img>
+        <Link to="/">
+        <img alt="logo" src="https://images2.imgbox.com/ce/34/ApMCnc3u_o.png" className="logo"></img>
+        </Link>
         <List />
         </section>
         <CartWidget />

@@ -1,3 +1,16 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+::-moz-selection { 
+  color: var(--inv);
+  background: var(--col);
+}
+
+::selection {
+  color: var(--inv);
+  background: var(--col);
+}
 #titleBackground {
   width: 98.7vw;
   height: 95vh;
@@ -5,7 +18,7 @@
   z-index: -1;
   filter: brightness(20%);
 }
-h1 {
+.openTitle {
   --top: 40%;
   --left: 50%;
   color: white;
@@ -243,12 +256,12 @@ h1 {
     -moz-box-shadow: 9px 19px 35px 5px rgba(245, 37, 237, 0.51);
   }
 }
-#inicio h2 {
+h2 {
   font-size: 3.5rem;
-  background: #f6e61d;
-  background: linear-gradient(89deg, #f6e61d 0%, #d5c713 80%);
-  background: -webkit-linear-gradient(89deg, #f6e61d 0%, #d5c713 80%);
-  background: -moz-linear-gradient(89deg, #f6e61d 0%, #d5c713 80%);
+  background: #d0c419;
+  background: linear-gradient(89deg, #d0c419 0%, #d5c713 80%);
+  background: -webkit-linear-gradient(89deg, #d0c419 0%, #d5c713 80%);
+  background: -moz-linear-gradient(89deg, #d0c419 0%, #d5c713 80%);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -265,7 +278,7 @@ h1 {
 .productButton{
   text-decoration:none;
   color:var(--inv);
-  background-color:#f6e61d;
+  background-color:#d0c419;
   border:var(--col) 2px solid;
   display:inline-block;
   padding:5px;
@@ -278,7 +291,7 @@ h1 {
 }
 @keyframes changeButton{
   0%{
-    background-color:#f6e61d;
+    background-color:#d0c419;
   }
   100%{
     background-color:var(--col);
@@ -286,6 +299,8 @@ h1 {
 }
 .productsClasses{
   border:none;
+  padding-bottom:10vh;
+  padding-top:5vh;
 }
 .productsClasses ul{
   display:flex;
@@ -297,9 +312,12 @@ h1 {
 .productsClasses ul li{
 list-style: none;
 }
+.productsClasses ul li:hover{
+  border-bottom:2px solid #d0c419;
+}
 .productsClasses ul li:hover::before{
   content:">";
-  color:#f6e61d;
+  color:#d0c419;
 }
 .productsClasses ul li a{
   text-decoration: none;
@@ -316,14 +334,14 @@ list-style: none;
 }
 .item div h2::before{
     content:"Nombre: ";
-    color:#f6e61d;
+    color:#d0c419;
 }
 .item div h3{
   font-size:1.8rem;
 }
 .item div h3::before{
   content:"Marca: ";
-  color:#f6e61d;
+  color:#d0c419;
 }
 .item div h4{
   color:green;
@@ -332,7 +350,147 @@ list-style: none;
 .item div h4::before{
   content:"$";
 }
-.item div p::before{
+.item div p::before:not(.cartAddingCount){
   content:"Descripción: ";
-  color:#f6e61d;
+  color:#d0c419;
 }
+.item button{
+  background-color:blue;
+  color:white;
+  padding:10px;
+  border-radius: 10px;
+  font-size:1rem;
+  border:0px solid white;
+  margin-top:5px;
+  cursor:pointer;
+}
+.item button:hover{
+  color:var(--inv);
+background-color: var(--col);
+animation-name:changeButton2;
+animation-duration:0.2s;
+}
+
+@keyframes changeButton2 {
+  0%{
+    background-color:blue;
+    color:white;
+  }
+  100%{
+    background-color:var(--col);
+    color:var(--inv);
+  }
+}
+.item div .cartCountButtons{
+  display: flex;
+}
+.item div .cartCountButtons input, .cartCountButtons p{
+  font-size:1.5rem;
+}
+.item div .cartCountButtons input{
+  background-color:var(--col);
+  color:var(--inv);
+  border-radius:20%;
+}
+.item div .cartCountButtons input:hover{
+  font-size:2rem;
+  animation:bigger 0.1s;
+}
+@keyframes bigger{
+  0%{
+    font-size:1.5rem;
+  }
+  10%{
+    font-size:1.55rem;
+  }
+  20%{
+    font-size:1.6rem;
+  }
+  30%{
+    font-size:1.65rem;
+  }
+  40%{
+    font-size:1.70rem;
+  }
+  50%{
+    font-size:1.75rem;
+  }
+  60%{
+    font-size:1.8rem;
+  }
+  70%{
+    font-size:1.85rem;
+  }
+  80%{
+    font-size:1.9rem;
+  }
+  90%{
+    font-size:1.95rem;
+  }
+  100%{
+    font-size:2rem;
+  }
+}
+.item div .cartCountButtons .sub{
+  padding:0.2vw;
+}
+.cartCount{
+  font-size:1.5rem;
+  color:#330f7c;
+}
+.cartCount::before{
+  content:"Elementos añadidos al carrito: ";
+  color:var(--col);
+}
+.general{
+  text-align:center;
+}
+.general h3, .brand h3{
+  font-size:2rem;
+  color:grey;
+  margin-top:10vh;
+}
+.general p, .general ul li{
+  font-size:1.5rem;
+}
+.general div{
+  margin-bottom:10vh;
+}
+.general .lastTitle, .general .lastDiv{
+  margin-bottom:0px;
+}
+.general ul{
+  margin-top:5vh;
+}
+.general ul li{
+  list-style:none;
+}
+.general ul li::before{
+  content:"✅";
+}
+h2:not(#inicio_title):not(.centered):not(.productName):hover {
+  background:var(--inv);
+  -webkit-background-clip:text;
+    -webkit-text-stroke:0.5px;
+    -webkit-text-stroke-color:var(--col);
+}
+.brand{
+  display:inline-block;
+  border:2px double var(--col);
+}
+.brand img{
+  width:20vw;
+}
+#whiskas{
+  margin-bottom:5vh;
+  padding-top:9.6vh;
+}
+#purina{
+  margin-bottom:5vh;
+  padding-top:14vh;
+}
+#royal{
+  margin-bottom:10vh;
+  padding-top:17.3vh;
+}
+

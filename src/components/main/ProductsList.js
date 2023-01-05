@@ -6,7 +6,7 @@ export const ProductsList = [
     "precio": 1500,
     "especie": "gato",
     "descripcion": "Un excelente plan reducido en calorías.",
-    "img": "https://nutrican.com.ar/wp-content/uploads/2022/09/PROPLAN-REDUCED-CALORIE-GATO.png"
+    "img":"https://images2.imgbox.com/20/7a/emO2gR3Q_o.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@ export const ProductsList = [
     "precio": 2000,
     "especie": "gato",
     "descripcion":"Las sardinas preferidas de tu amigo.",
-    "img":"https://www.whiskas.com.ar/wp-content/uploads/2018/12/SobreSardina-01_0010.png"
+    "img":"https://images2.imgbox.com/24/eb/vZwHQF3J_o.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@ export const ProductsList = [
     "precio": 1400,
     "especie": "perro",
     "descripcion":"El producto que los cachorros necesitan.",
-    "img":"https://cdn.royalcanin-weshare-online.io/5ufz6HABaPOZra8qaW3Y/v17/ar-l-producto-mini-puppy-pouch-size-health-nutrition-humedo"
+    "img":"https://images2.imgbox.com/4f/28/OyBkhuw4_o.png"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@ export const ProductsList = [
     "precio": 2350,
     "especie": "perro",
     "descripcion":"El alimento nutritivo perfecto para los perros mas sanos.",
-    "img":"https://cdn.royalcanin-weshare-online.io/fmnlrWsBG95Xk-RB5vtj/v308/packshot-maxi-ad5-shn17"
+    "img":"https://images2.imgbox.com/a5/6d/sFqBx9Ib_o.png"
   },
   {
     "id": 5,
@@ -42,6 +42,6 @@ export const ProductsList = [
     "precio": 900,
     "especie": "pez",
     "descripcion":"El mejor alimento saludable para peces recomendado a nivel mundial.",
-    "img":"https://petland.com.ar/wp-content/uploads/2022/09/Shulet-Tropical-Alimento-Peces-x-40grs-PETLAND-5492.png"
+    "img":"https://images2.imgbox.com/6d/14/1aCPhnhP_o.png"
   }
 ]

@@ -21,7 +21,7 @@ export const Inicio = function () {
                     donde hallarás un sin fín de alimentos nutritivos y balanceados
                     para mejorar el día a día de tu mejor amigo.
                 </p>
-                <Link to="catalogue/todos" class="exploreProducts">Ir al catalogo de productos</Link>
+                <Link to="catalogue/todos" className="exploreProducts">Ir al catalogo de productos</Link>
             </div>
         </section>
     )

@@ -30,10 +30,20 @@ nav section ul li a:hover{
     width:10vw;
 }
 .cart{
-    width:20px;
+    width:29px;
     margin-top:9vh;
-    margin-right:2vw;
 }
-.cart:hover{
-    color:#ffde59;
+.cartContainer{
+    margin-right:2vw; 
+    color:#330f7c;
 }
+.cartLink{
+    text-decoration: none;
+}
+.cartContainer:hover{
+    color:#d0c419;
+}
+.cartContainer p{
+display: inline-block;
+}
+
