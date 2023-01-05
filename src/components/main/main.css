@@ -77,6 +77,21 @@
   color: black;
   cursor: pointer;
 }
+.visualMode:hover{
+  animation-name:rotating;
+  animation-duration:0.5s;
+}
+@keyframes rotating{
+  0%{
+    transform: rotate(90deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+.visualMode:active{
+  font-size:2.3rem;
+}
 .changeMode {
   display: flex;
 }
@@ -95,6 +110,12 @@
   margin: 10px;
   width: 200px;
   height: 325px;
+  border:2px solid var(--col);
+  
+}
+.perro:hover,
+.gato:hover,
+.pez:hover{
   box-shadow: 0px 0px 59px 10px rgba(246,230,29,0.75);
 -webkit-box-shadow: 0px 2px 59px 10px rgba(246,230,29,0.75);
 -moz-box-shadow: 0px 2px 59px 10px rgba(246,230,29,0.75);
@@ -275,7 +296,7 @@ h2 {
 .exploreProducts:hover {
   color: #ffde59;
 }
-.productButton{
+.productButton, .fullCart .rightSide #buyCart{
   text-decoration:none;
   color:var(--inv);
   background-color:#d0c419;
@@ -284,7 +305,7 @@ h2 {
   padding:5px;
   border-radius:12px;
 }
-.productButton:hover{
+.productButton:hover, .fullCart .rightSide #buyCart:hover{
   background-color:var(--col);
   animation-name:changeButton;
   animation-duration:0.5s;
@@ -391,10 +412,16 @@ animation-duration:0.2s;
   background-color:var(--col);
   color:var(--inv);
   border-radius:20%;
+  cursor:pointer;
 }
 .item div .cartCountButtons input:hover{
   font-size:2rem;
   animation:bigger 0.1s;
+}
+.item div .cartCountButtons input:active{
+  color:var(--col);
+  background-color:var(--inv);
+  border:2px solid var(--col);
 }
 @keyframes bigger{
   0%{
@@ -493,4 +520,69 @@ h2:not(#inicio_title):not(.centered):not(.productName):hover {
   margin-bottom:10vh;
   padding-top:17.3vh;
 }
-
+.addedCount-true{
+  font-size:1rem;
+  color:grey;
+}
+.addedCount-true::before{
+  content:"Productos agregados:";
+  color:var(--col);
+}
+#clearButton{
+  font-size:1rem;
+  font-weight:bold;
+  border-radius:20%;
+  color:var(--col);
+  background-color:red;
+  border:2px solid var(--col);
+  padding:1vw;
+}
+#clearButton:hover{
+  background-color:var(--col);
+  color:red;
+  border:2px solid red;
+}
+#clearButton:active{
+  font-size:0.9rem;
+}
+.limit{
+  color:yellow;
+  -webkit-text-stroke:0.3px;
+  -webkit-text-stroke-color:grey;
+}
+.limit::before{
+  content:"⚠️";
+}
+.hideLimitError{
+  display:none;
+}
+.showLimitError{
+   color:red;
+}
+.fullCart{
+  display:flex;
+  justify-content:space-between;
+}
+.fullCart .rightSide{
+  border:2px dashed var(--col);
+  padding-bottom:2vh;
+}
+.fullCart .rightSide .finalPrice{
+  color:greenyellow;
+  font-size:2rem;
+}
+.fullCart .rightSide .finalPrice::before{
+  content:"Precio final:";
+  color:var(--col);
+}
+.fullCart .rightSide h4{
+  font-size:1.8rem;
+  color:#330f7c;
+}
+.fullCart .rightSide h4::before{
+  content:"Vendedor:";
+  color:var(--col);
+}
+.fullCart .rightSide #buyCart{
+  font-size:1.5rem;
+}
