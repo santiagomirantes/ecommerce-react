@@ -2,13 +2,12 @@
 
 import {Navbar} from "./Navbar.js"
 import "./header.css";
-import { useContext } from "react";
-import { cartContext } from "../../context/cartContext.js";
+import { memo } from "react";
 
-export const Header = () => {
+export const Header = memo(() => {
     return (
         <header>
             <Navbar />
         </header>
     )
-}
+})
