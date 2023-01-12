@@ -1,14 +1,50 @@
 import { useContext } from "react"
 import {cartContext} from "../../context/cartContext"
 import { Item } from "./Item"
+import { useState } from "react"
+import { FormContainer } from "./FormContainer"
 
 export const Cart = function() {
     let used = useContext(cartContext)
     let products = used.cart;
+    let [isBuying, changeIsBuying] = useState(false)
+    let [method, changeMethod] = useState("method")
+    let [orderNumber, makeOrderNumber] = useState(null)
+
+    const showInput = function() {
+      if(document.querySelector("#cre").checked) {
+         changeMethod("cre")
+      }
+      else if(document.querySelector("#mp").checked) {
+        changeMethod("mp")
+      }
+      else if(document.querySelector("#deb").checked) {
+        changeMethod("deb")
+      }
+      else if(document.querySelector("#pp").checked) {
+        changeMethod("pp")
+      }
+
+      changeIsBuying(true)
+    }
+
     if(used.cart.length === 0) {
       return(
         <>
         <h2>Aún no hay nada en el carrito</h2>
+        </>
+      )
+    }
+    else if(isBuying) {
+
+      return(
+        <FormContainer method={method} makeOrderNumber={makeOrderNumber}></FormContainer>
+      )
+    }
+    else if(orderNumber !== null) {
+      return(
+        <>
+        <h2 id="orderNumber">{orderNumber}</h2>
         </>
       )
     }
@@ -23,7 +59,7 @@ export const Cart = function() {
             <p className="cartCount">{used.cart.length}</p>
             {
                products.map(i => {
-                return (<Item key={products.indexOf(i)} id={i.id} nombre={i.nombre} precio={i.precio} especie={i.especie} img={i.img} count={i.count} showCount="true"></Item>)
+                return (<Item key={products.indexOf(i)} id={i.id} nombre={i.nombre} precio={i.precio} especie={i.especie} img={i.img} count={i.count} showCount="true" showDelete="true"></Item>)
                })
             }
             <input type="button" id="clearButton" value="limpiar carrito" onClick={() => {used.clearCart("remove")}}></input>
@@ -41,26 +77,28 @@ export const Cart = function() {
             
             <p>Escoga el método de pago deseado:</p>
             <div className="payMethod">
-            <input type="radio" id="mp" name="method" checked></input>
-            <label for="mp">Mercado Pago</label>
+            <input type="radio" id="mp" name="method" defaultChecked = {true}></input>
+            <label htmlFor="mp">Mercado Pago</label>
             </div>
             
             <div className="payMethod">
             <input type="radio" id="cre" name="method"></input>
-            <label for="cre">Crédito</label>
+            <label htmlFor="cre">Crédito</label>
             </div>
     
             <div className="payMethod">
             <input type="radio" id="deb" name="method"></input>
-            <label for="deb">Débito</label>
+            <label htmlFor="deb">Débito</label>
             </div>
             
             <div className="payMethod">
             <input type="radio" id="pp" name="method"></input>
-            <label for="pp">PayPal</label>
+            <label htmlFor="pp">PayPal</label>
             </div>
             
-            <input type="button" value="Realizar compra" id="buyCart" onClick={() => {used.clearCart("buy")}}></input>
+            <input type="button" value="Realizar compra" id="buyCart" onClick={() => {showInput(true)}}></input>
+            {/*original function : used.clearCart("buy")*/}
+            
             </div>
     
             </div>

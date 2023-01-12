@@ -1,6 +1,13 @@
 import { Brand } from "./Brand";
+import {Swiper} from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
+import {SwiperSlide} from "swiper/react"
 
 export const General = function () {
+ 
+  
   return (
     <section className="general">
         <h2>General</h2>
@@ -24,12 +31,14 @@ export const General = function () {
         <li id="pp">PayPal</li>
       </ul>
       </div>
-      <h3 class="lastTitle">MARCAS SOPORTADAS</h3>
-      <div class="lastDiv">
-      <Brand img="https://images2.imgbox.com/6e/c6/8tNoYrXi_o.png" givenId="whiskas" name="Whiskas"></Brand>
-      <Brand img="https://images2.imgbox.com/5e/a9/WkPTqu2v_o.png" givenId="royal" name="Royal Canin"></Brand>
-      <Brand img="https://images2.imgbox.com/33/72/c1tkkm7y_o.png" givenId="purina" name="Purina"></Brand>
-      <Brand img="https://images2.imgbox.com/53/7f/yAOC33zO_o.png" givenId="shulet" name="Shulet"></Brand>
+      <h3 className="lastTitle">MARCAS SOPORTADAS</h3>
+      <div className="lastDiv">
+      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+      <SwiperSlide><Brand img="https://images2.imgbox.com/6e/c6/8tNoYrXi_o.png" givenId="whiskas" name="Whiskas"></Brand></SwiperSlide>
+      <SwiperSlide><Brand img="https://images2.imgbox.com/5e/a9/WkPTqu2v_o.png" givenId="royal" name="Royal Canin"></Brand></SwiperSlide>
+      <SwiperSlide><Brand img="https://images2.imgbox.com/33/72/c1tkkm7y_o.png" givenId="purina" name="Purina"></Brand></SwiperSlide>
+      <SwiperSlide><Brand img="https://images2.imgbox.com/53/7f/yAOC33zO_o.png" givenId="shulet" name="Shulet"></Brand></SwiperSlide>
+      </Swiper>
       </div>
     </section>
   );

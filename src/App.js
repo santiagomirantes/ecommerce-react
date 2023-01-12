@@ -10,9 +10,9 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useEffect } from 'react';
 import { ItemDetailContainer } from "./components/main/ItemDetailContainer";
-import { createContext } from "react";
 import { CartContainer } from "./components/main/CartContainer";
 import { CartContextProvider } from "./context/cartContext";
+import { PYR } from "./components/main/PYR";
 
 
 function App() {
@@ -53,6 +53,7 @@ function App() {
               <Route path="/catalogue/:especie" element={<ItemListContainer></ItemListContainer>} />
               <Route path="/item/:id" element={<ItemDetailContainer></ItemDetailContainer>} />
               <Route path="/cart" element={<CartContainer></CartContainer>}></Route>
+              <Route path="/pyr" element={<PYR></PYR>}></Route>
             </Routes>
 
           </main>

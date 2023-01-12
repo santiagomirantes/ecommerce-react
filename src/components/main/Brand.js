@@ -1,6 +1,6 @@
 export const Brand = function({img, givenId, name}) {
-    return (
-        <div class="brand">
+    return(
+        <div className="brand">
             <img src={img} id={givenId} alt="Imágen de marca"></img>
             <h3>{name}</h3>
         </div>

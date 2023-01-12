@@ -11,6 +11,9 @@
   color: var(--inv);
   background: var(--col);
 }
+.hidden{
+  display:none;
+}
 #titleBackground {
   width: 98.7vw;
   height: 95vh;
@@ -111,6 +114,7 @@
   width: 200px;
   height: 325px;
   border:2px solid var(--col);
+  padding-bottom:5vh;
   
 }
 .perro:hover,
@@ -249,6 +253,18 @@
   }
 }
 
+.deleteItem-false{
+  display:none;
+}
+.deleteItem-true{
+  color:var(--col);
+  background-color:red;
+  border:none;
+}
+.deleteItem-true:hover{
+  color:red;
+  background-color: var(--col);
+}
 #inicio {
   display: flex;
   justify-content: space-between;
@@ -486,6 +502,20 @@ animation-duration:0.2s;
 .general .lastTitle, .general .lastDiv{
   margin-bottom:0px;
 }
+.general .lastDiv{
+  display:flex;
+  justify-content: center;
+}
+.general .lastDiv p{
+  margin-top:8vh;
+  font-size:10rem;
+  cursor: pointer;
+}
+.general .lastDiv p:hover{
+  color:var(--inv);
+  -webkit-text-stroke:2px;
+  -webkit-text-stroke-color:var(--col);
+}
 .general ul{
   margin-top:5vh;
 }
@@ -495,7 +525,7 @@ animation-duration:0.2s;
 .general ul li::before{
   content:"✅";
 }
-h2:not(#inicio_title):not(.centered):not(.productName):hover {
+h2:not(#inicio_title):not(.centered):not(.productName):not(#method):not(form h2):hover {
   background:var(--inv);
   -webkit-background-clip:text;
     -webkit-text-stroke:0.5px;
@@ -504,6 +534,13 @@ h2:not(#inicio_title):not(.centered):not(.productName):hover {
 .brand{
   display:inline-block;
   border:2px double var(--col);
+  margin-top:30vh;
+}
+.swiper-button-prev{
+  margin-left:20vw;
+}
+.swiper-button-next{
+  margin-right:20vw;
 }
 .brand img{
   width:20vw;
@@ -531,16 +568,18 @@ h2:not(#inicio_title):not(.centered):not(.productName):hover {
 #clearButton{
   font-size:1rem;
   font-weight:bold;
-  border-radius:20%;
   color:var(--col);
   background-color:red;
   border:2px solid var(--col);
   padding:1vw;
+  margin-left:2.5vw;
+  margin-bottom:1vh;
 }
 #clearButton:hover{
   background-color:var(--col);
   color:red;
   border:2px solid red;
+  box-shadow:0px 0px 50px red;
 }
 #clearButton:active{
   font-size:0.9rem;
@@ -585,4 +624,32 @@ h2:not(#inicio_title):not(.centered):not(.productName):hover {
 }
 .fullCart .rightSide #buyCart{
   font-size:1.5rem;
+}
+.noStyled{
+  font-size:2rem;
+}
+#method{
+  color:var(--col);
+}
+#method::before{
+  content:"Método:";
+  color:green;
+}
+.card{
+  font-size:1.5rem;
+  display:inline-block;
+  max-width:20ch;
+  border:2px solid grey;
+  padding-top:15vh;
+  padding-bottom:15vh;
+  padding-left:2vw;
+  padding-right:2vw;
+  margin:1vw;
+}
+.card:hover{
+  box-shadow:inset 0px 0px 50px yellow;
+}
+.card p.show{
+  font-size:1.1rem;
+  font-weight:bold;
 }

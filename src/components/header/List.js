@@ -8,7 +8,7 @@ export const List = () => {
             <li><Link to="/">Inicio</Link></li>
             <li><Link to="/general">General</Link></li>
             <li><Link to="/catalogue/todos">Productos</Link></li>
-            <li><Link to="pyr">P&R</Link></li>
+            <li><Link to="/pyr">P&R</Link></li>
         </ul>
     )
 }

@@ -20,7 +20,7 @@ export const ItemList = function({items}) {
         <section id="productos">
             {
                 items.map(i => {
-                return <Item key={i.id} id={i.id} nombre={i.nombre} precio={i.precio} especie={i.especie} img={i.img}></Item>
+                return <Item key={i.id} id={i.id} nombre={i.nombre} precio={i.precio} especie={i.especie} img={i.img} showDelete="false"></Item>
                 })
             }
 
